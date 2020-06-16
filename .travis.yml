@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.8
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: srinandank
+  password:
+    secure: dQSS1eOqebxzARLW5zwvmPIBlVfkIPkuXCCIX6b6GcYpDtZAZSDCMbVE/VZcujFYrSLII/WdzqwNBNa27zb7LMq2Ho+nAs1ODjQmkkkWxbXhlbK9/h409JDn4sPp/TolBsaIaEhT5TdnQzWEBPxSd8kzt0QS5ak6mULpyYuI7KFf+krmD847yaihlIxSSD3PzXL/kWsbU5038Nq2MNS18h4rCExSDexcnqRTs0k7Nf+2biIVssf9LGPIa86vSYRmqsOvspYsdOPw1r1l7lrEtmu30gL/kbDv/CF1Uu1xEYBAwBb7v3R7sdya+ouY35nLMmqCpzfXiPuMyRTRc+s6C7zIWJe0lcu6+/ngHudcSFbcZ9LGLNs2/YeOpOlQe8SmGV6z6tPpeLPbd4o5b4PoXfFuwB9XLsVfdziR2DKkpTAgo8zk2TWqTQ+IROcBiofCmjz5nBOwTTlmSAgGmgye412vRvwpXZ/bSsZ0+UKSlqPf54uZIQfPl7TLO/8FhXobWEKoo7WI6dLCixu0VuqNshvpvT0jgiq5hLShMPUOWOk5KxxR7eCY+2QzYS97CrpgSTXlSH4/Vqe3BfAW0+KM4dytitFNU2uyRXP9VAHddG/JMrw/1YdJUAcJtr3HJX0XioaQU+6YSYRDSheeFNOMEbEAHQHMvD9uuPzzFhAgovs=
+  on:
+    tags: true
+    repo: srinandank/gensetpy
+    python: 3.8
